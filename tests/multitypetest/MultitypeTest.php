@@ -179,4 +179,53 @@ class MultitypeTest extends \PHPUnit\Framework\TestCase
         $data = ["basictypes"=>0,"basictypesandarrays"=>[444]];
         $this->assertFieldMapped($data, 'basictypesandarrays', null, '');
     }
+
+    // basictypesandarraysincorrectorder
+
+    public function testMapsFirstBasicTypesAndArraysInCorrectOrderNullableInMultitype()
+    {
+        $data = ["basictypes"=>"stringvalue","basictypesandarraysincorrectorder"=>"stringvalue"];
+        $this->assertFieldMapped($data, 'basictypesandarraysincorrectorder');
+    }
+
+    public function testMapsFirstBasicTypesAndArraysInCorrectOrderNullableInMultitypeStrictType()
+    {
+        $data = ["basictypes"=>"stringvalue","basictypesandarraysincorrectorder"=>"stringvalue"];
+        $this->assertFieldMapped($data, 'basictypesandarraysincorrectorder', null, '');
+    }
+
+    public function testMapsSecondBasicTypesAndArraysInCorrectOrderNullableInMultitype()
+    {
+        $data = ["basictypes"=>144,"basictypesandarraysincorrectorder"=>144];
+        $this->assertFieldMapped($data, 'basictypesandarraysincorrectorder');
+    }
+
+    public function testMapsSecondBasicTypesAndArraysInCorrectOrderNullableInMultitypeStrictType()
+    {
+        $data = ["basictypes"=>144,"basictypesandarraysincorrectorder"=>144];
+        $this->assertFieldMapped($data, 'basictypesandarraysincorrectorder', null, '');
+    }
+
+    public function testMapsThirdBasicTypesAndArraysInCorrectOrderNullableInMultitype()
+    {
+        $data = ["basictypes"=>3.22,"basictypesandarraysincorrectorder"=>["stringvalue"]];
+        $this->assertFieldMapped($data, 'basictypesandarraysincorrectorder');
+    }
+
+    public function testMapsThirdBasicTypesAndArraysInCorrectOrderNullableInMultitypeStrictType()
+    {
+        $data = ["basictypes"=>3.22,"basictypesandarraysincorrectorder"=>["stringvalue"]];
+        $this->assertFieldMapped($data, 'basictypesandarraysincorrectorder', null, '');
+    }
+    public function testMapsFourthBasicTypesAndArraysInCorrectOrderNullableInMultitype()
+    {
+        $data = ["basictypes"=>0,"basictypesandarraysincorrectorder"=>[444]];
+        $this->assertFieldMapped($data, 'basictypesandarraysincorrectorder');
+    }
+
+    public function testMapsFourthBasicTypesAndArraysInCorrectOrderNullableInMultitypeStrictType()
+    {
+        $data = ["basictypes"=>0,"basictypesandarraysincorrectorder"=>[444]];
+        $this->assertFieldMapped($data, 'basictypesandarraysincorrectorder', null, '');
+    }
 }

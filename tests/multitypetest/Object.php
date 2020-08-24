@@ -16,4 +16,9 @@ class MultitypeTest_Object
      * @var string|int|string[]|int[]
      */
     public $basictypesandarrays;
+
+    /**
+     * @var string[]|int[]|string|int
+     */
+    public $basictypesandarraysincorrectorder;
 }

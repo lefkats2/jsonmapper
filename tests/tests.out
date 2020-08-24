@@ -147,6 +147,14 @@ Multitype
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:174
    │ 
  ✔ Maps fourth basic types and arrays nullable in multitype strict type
+ ✔ Maps first basic types and arrays in correct order nullable in multitype
+ ✔ Maps first basic types and arrays in correct order nullable in multitype strict type
+ ✔ Maps second basic types and arrays in correct order nullable in multitype
+ ✔ Maps second basic types and arrays in correct order nullable in multitype strict type
+ ✔ Maps third basic types and arrays in correct order nullable in multitype
+ ✔ Maps third basic types and arrays in correct order nullable in multitype strict type
+ ✔ Maps fourth basic types and arrays in correct order nullable in multitype
+ ✔ Maps fourth basic types and arrays in correct order nullable in multitype strict type
 
 namespacetest\Namespace
  ✔ Map array namespace
@@ -161,7 +169,7 @@ namespacetest\Namespace
  ✔ Map custom array object
  ✔ Setter namespaced type hint
 
-Time: 54 ms, Memory: 6.00 MB
+Time: 55 ms, Memory: 6.00 MB
 
 Summary of non-successful tests:
 
@@ -186,4 +194,4 @@ Multitype
    │ 
 
 FAILURES!
-Tests: 126, Assertions: 315, Failures: 2, Skipped: 1.
+Tests: 134, Assertions: 335, Failures: 2, Skipped: 1.
