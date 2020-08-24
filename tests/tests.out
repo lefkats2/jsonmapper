@@ -1,0 +1,133 @@
+
+PHPUnit 7.5.20 by Sebastian Bergmann and contributors.
+
+Array
+ ✔ Map typed array
+ ✔ Map typed simple array
+ ✔ Nullable simple
+ ✔ Map array json no type enforcement
+ ✔ Fl array
+ ✔ Fl array keyed
+ ✔ Str array
+ ✔ Str array v 2
+ ✔ Map array object
+ ✔ Map typed array object
+ ✔ Map simple array object
+ ✔ Invalid array
+ ✔ Invalid array object
+ ✔ Array object nullable
+ ✔ Array object invalid null
+ ✔ Non nullable array object with loose null checks
+ ✔ Map typed array object does not exist
+ ✔ Array object list
+ ✔ Array object subclass list
+ ✔ N matrix
+ ✔ Object multiverse
+ ✔ Map array
+ ✔ Map array strange keys
+ ✔ Map typed simple array from object
+ ✔ Object instead of string
+ ✔ Polymorphic array
+
+ClassMap
+ ✔ Class map with data set "name"
+ ✔ Class map with data set "function"
+ ✔ Class map with data set "invoke"
+ ✔ Namespace key with leading backslash
+ ✔ Namespace key no leading backslash
+ ✔ Map object to simple type
+ ✔ Map array subtype
+
+Event
+ ✔ Deserialize post event
+
+Object
+ ✔ Map object
+ ✔ Map date time
+ ✔ Map date time null
+ ✔ Setting value objects
+ ✔ Complex object
+ ✔ Strict type checking object
+ ✔ Strict type checking object error
+ ✔ Object nullable
+ ✔ Object setter nullable
+ ✔ Object setter dockblock nullable
+ ✔ Object invalid null
+ ✔ Object instead of string
+ ✔ Constructor without params
+ ✔ Constructor with optional params
+
+Options_RemoveUndefinedAttributes
+ ✔ Remove undefined attributes
+
+Other
+ ✔ Map null json
+ ✔ Map null object
+ ✔ Map empty
+ ✔ Map only setter type hint
+ ✔ Map only setter docblock
+ ✔ Map only setter no type
+ ✔ Map protected without setter method
+ ✔ Missing data exception
+ ✔ Missing data no exception
+ ✔ Undefined property exception
+ ✔ Undefined property handler
+ ✔ Private property with public setter
+ ✔ Private property with no setter
+ ✔ Private property with no setter but allowed
+ ✔ Private property in parent class with no setter but allowed
+ ✔ Private property with private setter
+ ✔ Private property setter without doc
+ ✔ Private property nullable not null setter without doc
+ ✔ Private property nullable null setter without doc
+ ✔ Private array of simple
+ ✔ Private setter but allowed
+ ✔ Setter is preferred over property
+ ✔ Case insensitive property matching
+ ✔ Dependency injection
+
+PHP74_StrictTypes
+ → Strict types mapping
+
+PHP7_1_Object
+ ✔ Object setter type nullable
+ ✔ Object setter docblock invalid null
+
+Simple
+ ✔ Map simple string
+ ✔ Map simple float
+ ✔ Map simple bool
+ ✔ Map simple boolean
+ ✔ Map simple int
+ ✔ Map simple integer
+ ✔ Map simple mixed
+ ✔ Map simple nullable int
+ ✔ Map simple nullable null
+ ✔ Map simple nullable wrong
+ ✔ Map simple no type
+ ✔ Map simple underscore
+ ✔ Map simple underscore setter
+ ✔ Map simple hyphen
+ ✔ Map simple hyphen setter
+
+namespacetest\Namespace
+ ✔ Map array namespace
+ ✔ Map simple array namespace
+ ✔ Map simple string array namespace
+ ✔ Map mixed
+ ✔ Map child class namespace
+ ✔ Map child class constructor namespace
+ ✔ Map child object array namespace
+ ✔ Map empty
+ ✔ Map custom array object with child type
+ ✔ Map custom array object
+ ✔ Setter namespaced type hint
+
+Time: 51 ms, Memory: 6.00 MB
+
+Summary of non-successful tests:
+
+PHP74_StrictTypes
+ → Strict types mapping
+OK, but incomplete, skipped, or risky tests!
+Tests: 102, Assertions: 258, Skipped: 1.
