@@ -130,4 +130,53 @@ class MultitypeTest extends \PHPUnit\Framework\TestCase
         $data = ["basictypes"=>0,"basictypesnullable"=>null];
         $this->assertFieldMapped($data, 'basictypesnullable', null, '');
     }
+
+    // basictypesandarrays
+
+    public function testMapsFirstBasicTypesAndArraysNullableInMultitype()
+    {
+        $data = ["basictypes"=>"stringvalue","basictypesandarrays"=>"stringvalue"];
+        $this->assertFieldMapped($data, 'basictypesandarrays');
+    }
+
+    public function testMapsFirstBasicTypesAndArraysNullableInMultitypeStrictType()
+    {
+        $data = ["basictypes"=>"stringvalue","basictypesandarrays"=>"stringvalue"];
+        $this->assertFieldMapped($data, 'basictypesandarrays', null, '');
+    }
+
+    public function testMapsSecondBasicTypesAndArraysNullableInMultitype()
+    {
+        $data = ["basictypes"=>144,"basictypesandarrays"=>144];
+        $this->assertFieldMapped($data, 'basictypesandarrays');
+    }
+
+    public function testMapsSecondBasicTypesAndArraysNullableInMultitypeStrictType()
+    {
+        $data = ["basictypes"=>144,"basictypesandarrays"=>144];
+        $this->assertFieldMapped($data, 'basictypesandarrays', null, '');
+    }
+
+    public function testMapsThirdBasicTypesAndArraysNullableInMultitype()
+    {
+        $data = ["basictypes"=>3.22,"basictypesandarrays"=>["stringvalue"]];
+        $this->assertFieldMapped($data, 'basictypesandarrays');
+    }
+
+    public function testMapsThirdBasicTypesAndArraysNullableInMultitypeStrictType()
+    {
+        $data = ["basictypes"=>3.22,"basictypesandarrays"=>["stringvalue"]];
+        $this->assertFieldMapped($data, 'basictypesandarrays', null, '');
+    }
+    public function testMapsFourthBasicTypesAndArraysNullableInMultitype()
+    {
+        $data = ["basictypes"=>0,"basictypesandarrays"=>[444]];
+        $this->assertFieldMapped($data, 'basictypesandarrays');
+    }
+
+    public function testMapsFourthBasicTypesAndArraysNullableInMultitypeStrictType()
+    {
+        $data = ["basictypes"=>0,"basictypesandarrays"=>[444]];
+        $this->assertFieldMapped($data, 'basictypesandarrays', null, '');
+    }
 }

@@ -127,6 +127,28 @@ Multitype
  ✔ Maps last basic type nullable in multitype strict type
  ✔ Maps null basic type nullable in multitype
  ✔ Maps null basic type nullable in multitype strict type
+ ✔ Maps first basic types and arrays nullable in multitype
+ ✔ Maps first basic types and arrays nullable in multitype strict type
+ ✔ Maps second basic types and arrays nullable in multitype
+ ✔ Maps second basic types and arrays nullable in multitype strict type
+ ✘ Maps third basic types and arrays nullable in multitype
+   │
+   │ Array to string conversion
+   │ 
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/src/JsonMapper.php:267
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:14
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:163
+   │ 
+ ✔ Maps third basic types and arrays nullable in multitype strict type
+ ✘ Maps fourth basic types and arrays nullable in multitype
+   │
+   │ Array to string conversion
+   │ 
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/src/JsonMapper.php:267
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:14
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:174
+   │ 
+ ✔ Maps fourth basic types and arrays nullable in multitype strict type
 
 namespacetest\Namespace
  ✔ Map array namespace
@@ -141,11 +163,31 @@ namespacetest\Namespace
  ✔ Map custom array object
  ✔ Setter namespaced type hint
 
-Time: 53 ms, Memory: 6.00 MB
+Time: 54 ms, Memory: 6.00 MB
 
 Summary of non-successful tests:
 
 PHP74_StrictTypes
  → Strict types mapping
-OK, but incomplete, skipped, or risky tests!
-Tests: 118, Assertions: 295, Skipped: 1.
+
+Multitype
+ ✘ Maps third basic types and arrays nullable in multitype
+   │
+   │ Array to string conversion
+   │ 
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/src/JsonMapper.php:267
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:14
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:163
+   │ 
+
+ ✘ Maps fourth basic types and arrays nullable in multitype
+   │
+   │ Array to string conversion
+   │ 
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/src/JsonMapper.php:267
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:14
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:174
+   │ 
+
+ERRORS!
+Tests: 126, Assertions: 311, Errors: 2, Skipped: 1.
