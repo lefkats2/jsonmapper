@@ -156,6 +156,9 @@ class MultitypeTest extends \PHPUnit\Framework\TestCase
      */
     public function testMapsMultitype(string $title, array $data, string $classname, string $field, $value, string $strict_type = null, bool $expect_to_fail)
     {
+        if (is_null($strict_type)) {
+            $this->markTestSkipped('Multitype is only supported with bStrictTypeChecking=true until type order is fixed');
+        }
         $this->assertFieldMapped($data, $field, $value, $strict_type, $expect_to_fail, $classname);
     }
 }

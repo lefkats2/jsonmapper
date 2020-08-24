@@ -916,7 +916,7 @@ class JsonMapper
      */
     protected function splitTypeDeclerations($type): array
     {
-        if (is_string($type)) {
+        if (is_string($type)&&$this->bStrictTypeChecking) { // FIXME: multitype supported only for strict type checking currently due to order of types
             /* @var string */
             $type;
 
@@ -925,7 +925,7 @@ class JsonMapper
             }));
         }
 
-        return [$type];
+        return [$this->removeNullable($type)];
     }
 
     /**
@@ -977,7 +977,7 @@ class JsonMapper
     }
 
     /**
-     * Prioritizes types by sorting them using comparator returned from $this->makeTypeNameComparator().
+     * Prioritizes types.
      * @return array
      */
     protected function prioritizeTypes(array $type_names)
@@ -985,46 +985,10 @@ class JsonMapper
         if ($this->bStrictMultitypeOrdering || count($type_names)<=1) {
             return $type_names;
         }
-        usort($type_names, $this->makeTypeNameComparator());
+        // FIXME: sort types so when in multitype decl the are tryied in correct order (and enable multitype on splitTypeDeclerations() for
+        // no strict.
+        // usort($type_names, $this->makeTypeNameComparator());
         return $type_names;
-    }
-
-    /**
-     * Returns a comparator function to use against type names.
-     *
-     * By default a simple comparator is returned which compares first according to a cost-function which scores the
-     * typenames based on the matches and scores declared at self::TYPERX_PRIORITIES_DEFAULTS and then if equal with
-     * strcasecmp()
-     *
-     * @return Closure
-     */
-    protected function makeTypeNameComparator()
-    {
-        $costf = function ($type_name) {
-            static $cost_cache = [];
-            if (isset($cost_cache[$type_name])) {
-                return $cost_cache[$type_name];
-            }
-            $total = 0;
-            foreach (static::TYPERX_PRIORITIES_DEFAULTS as $priority_entry) {
-                $rx = $priority_entry[0];
-                if (preg_match($rx, $type_name)) {
-                    $total+=$priority_entry[1]??0;
-                }
-            }
-            $cost_cache[$type_name]=$total;
-            return $cost_cache[$type_name] = $total;
-        };
-        return function ($a, $b) use ($costf) {
-            $score_a = $costf($a);
-            $score_b = $costf($b);
-            if ($score_a==$score_b) {
-                return strcasecmp($a, $b);
-            } elseif ($score_a < $score_b) {
-                return -1;
-            }
-            return 1;
-        };
     }
 
     /**

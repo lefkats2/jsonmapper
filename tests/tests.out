@@ -111,79 +111,34 @@ Simple
  ✔ Map simple hyphen setter
 
 Multitype
- ✔ Maps "stringvalue" as "string" in multitype decleration "string|int|float"
- ✔ Maps 3 as "int" in multitype decleration "string|int|float"
- ✔ Maps 9.42 as "float" in multitype decleration "string|int|float"
- ✔ Does not map null as "null" in multitype decleration "string|int|float"
- ✔ Maps "stringvalue" as "string" in multitype decleration "string|int|float|null"
- ✔ Maps 3 as "int" in multitype decleration "string|int|float|null"
- ✔ Maps 9.42 as "float" in multitype decleration "string|int|float|null"
- ✔ Maps null as "null" in multitype decleration "string|int|float|null"
- ✔ Maps "stringvalue" as "string" in multitype decleration "string|int|string[]|int[]"
- ✔ Maps 3 as "int" in multitype decleration "string|int|string[]|int[]"
- ✔ Maps ["stringvalue"] as "string[]" in multitype decleration "string|int|string[]|int[]"
- ✔ Maps [3] as "int[]" in multitype decleration "string|int|string[]|int[]"
- ✔ Does not map null as "null" in multitype decleration "string|int|string[]|int[]"
- ✔ Maps ["stringvalue"] as "string[]" in multitype decleration "string[]|int[]|string|int"
- ✔ Maps [3] as "int[]" in multitype decleration "string[]|int[]|string|int"
- ✔ Maps "stringvalue" as "string" in multitype decleration "string[]|int[]|string|int"
- ✔ Maps 3 as "int" in multitype decleration "string[]|int[]|string|int"
- ✔ Does not map null as "null" in multitype decleration "string[]|int[]|string|int"
- ✘ Maps 3 as "int" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
-   │
-   │ Array (...) does not match expected type "integer".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
-   │ 
- ✘ Maps "stringvalue" as "string" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
-   │
-   │ Array (...) does not match expected type "string".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
-   │ 
- ✘ Maps 9.42 as "float" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
-   │
-   │ Array (...) does not match expected type "double".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
-   │ 
- ✔ Maps ["stringvalue"] as "string[]" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
- ✔ Maps [3] as "int[]" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
- ✘ Maps [{"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null}] as "JsonMapperTest_Object[]" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
-   │
-   │ Failed asserting that two arrays are equal.
-   │ --- Expected
-   │ +++ Actual
-   │ @@ @@
-   │  Array (
-   │ -    0 => JsonMapperTest_Object Object &000000000feebb6c000000003c62d439 (
-   │ +    0 => stdClass Object &000000000feeb80a000000003c62d439 (
-   │          'datetime' => null
-   │          'pValueObject' => null
-   │          'pValueObjectNullable' => null
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
-   │ 
- ✘ Maps {"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null} as "JsonMapperTest_Object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
-   │
-   │ Array (...) does not match expected type "object".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
-   │ 
- ✘ Maps {} as "object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
-   │
-   │ Array () does not match expected type "object".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
-   │ 
- ✔ Maps ["stringvalue",4,3.2] as "array" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
- ✔ Does not map null as "null" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps "stringvalue" as "string" in multitype decleration "string|int|float"
+ → Maps 3 as "int" in multitype decleration "string|int|float"
+ → Maps 9.42 as "float" in multitype decleration "string|int|float"
+ → Does not map null as "null" in multitype decleration "string|int|float"
+ → Maps "stringvalue" as "string" in multitype decleration "string|int|float|null"
+ → Maps 3 as "int" in multitype decleration "string|int|float|null"
+ → Maps 9.42 as "float" in multitype decleration "string|int|float|null"
+ → Maps null as "null" in multitype decleration "string|int|float|null"
+ → Maps "stringvalue" as "string" in multitype decleration "string|int|string[]|int[]"
+ → Maps 3 as "int" in multitype decleration "string|int|string[]|int[]"
+ → Maps ["stringvalue"] as "string[]" in multitype decleration "string|int|string[]|int[]"
+ → Maps [3] as "int[]" in multitype decleration "string|int|string[]|int[]"
+ → Does not map null as "null" in multitype decleration "string|int|string[]|int[]"
+ → Maps ["stringvalue"] as "string[]" in multitype decleration "string[]|int[]|string|int"
+ → Maps [3] as "int[]" in multitype decleration "string[]|int[]|string|int"
+ → Maps "stringvalue" as "string" in multitype decleration "string[]|int[]|string|int"
+ → Maps 3 as "int" in multitype decleration "string[]|int[]|string|int"
+ → Does not map null as "null" in multitype decleration "string[]|int[]|string|int"
+ → Maps 3 as "int" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps "stringvalue" as "string" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps 9.42 as "float" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps ["stringvalue"] as "string[]" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps [3] as "int[]" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps [{"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null}] as "JsonMapperTest_Object[]" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps {"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null} as "JsonMapperTest_Object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps {} as "object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps ["stringvalue",4,3.2] as "array" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Does not map null as "null" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
  ✔ Maps "stringvalue" as "string" in multitype decleration "string|int|float" with strict type checking
  ✔ Maps 3 as "int" in multitype decleration "string|int|float" with strict type checking
  ✔ Maps 9.42 as "float" in multitype decleration "string|int|float" with strict type checking
@@ -214,18 +169,18 @@ Multitype
    │ +++ Actual
    │ @@ @@
    │  Array (
-   │ -    0 => JsonMapperTest_Object Object &000000000feebbe7000000003c62d439 (
-   │ +    0 => stdClass Object &000000000feeb839000000003c62d439 (
+   │ -    0 => JsonMapperTest_Object Object &0000000058db3e0f000000006111f566 (
+   │ +    0 => stdClass Object &0000000058db3ee4000000006111f566 (
    │          'datetime' => null
    │          'pValueObject' => null
    │          'pValueObjectNullable' => null
    │ 
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:162
    │ 
  ✘ Maps {"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null} as "JsonMapperTest_Object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array" with strict type checking
    │
-   │ stdClass Object &000000000feebbb7000000003c62d439 (
+   │ stdClass Object &0000000058db3e81000000006111f566 (
    │     'datetime' => null
    │     'pValueObject' => null
    │     'pValueObjectNullable' => null
@@ -235,18 +190,18 @@ Multitype
    │ --- Expected
    │ +++ Actual
    │ @@ @@
-   │ -JsonMapperTest_Object Object &000000000feebbe4000000003c62d439 (
-   │ +stdClass Object &000000000feebbb7000000003c62d439 (
+   │ -JsonMapperTest_Object Object &0000000058db3e0c000000006111f566 (
+   │ +stdClass Object &0000000058db3e81000000006111f566 (
    │      'datetime' => null
    │      'pValueObject' => null
    │      'pValueObjectNullable' => null
    │ 
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:162
    │ 
  ✘ Maps {} as "object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array" with strict type checking
    │
-   │ JsonMapperTest_Object Object &000000000feebb66000000003c62d439 (
+   │ JsonMapperTest_Object Object &0000000058db3eef000000006111f566 (
    │     'datetime' => null
    │     'pValueObject' => null
    │     'pValueObjectNullable' => null
@@ -256,8 +211,8 @@ Multitype
    │ --- Expected
    │ +++ Actual
    │ @@ @@
-   │ -stdClass Object &000000000feebbe5000000003c62d439 ()
-   │ +JsonMapperTest_Object Object &000000000feebb66000000003c62d439 (
+   │ -stdClass Object &0000000058db3e0d000000006111f566 ()
+   │ +JsonMapperTest_Object Object &0000000058db3eef000000006111f566 (
    │ +    'datetime' => null
    │ +    'pValueObject' => null
    │ +    'pValueObjectNullable' => null
@@ -266,7 +221,7 @@ Multitype
    │ +)
    │ 
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:162
    │ 
  ✔ Maps ["stringvalue",4,3.2] as "array" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array" with strict type checking
  ✔ Does not map null as "null" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array" with strict type checking
@@ -292,63 +247,34 @@ PHP74_StrictTypes
  → Strict types mapping
 
 Multitype
- ✘ Maps 3 as "int" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
-   │
-   │ Array (...) does not match expected type "integer".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
-   │ 
-
- ✘ Maps "stringvalue" as "string" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
-   │
-   │ Array (...) does not match expected type "string".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
-   │ 
-
- ✘ Maps 9.42 as "float" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
-   │
-   │ Array (...) does not match expected type "double".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
-   │ 
-
- ✘ Maps [{"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null}] as "JsonMapperTest_Object[]" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
-   │
-   │ Failed asserting that two arrays are equal.
-   │ --- Expected
-   │ +++ Actual
-   │ @@ @@
-   │  Array (
-   │ -    0 => JsonMapperTest_Object Object &000000000feebb6c000000003c62d439 (
-   │ +    0 => stdClass Object &000000000feeb80a000000003c62d439 (
-   │          'datetime' => null
-   │          'pValueObject' => null
-   │          'pValueObjectNullable' => null
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
-   │ 
-
- ✘ Maps {"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null} as "JsonMapperTest_Object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
-   │
-   │ Array (...) does not match expected type "object".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
-   │ 
-
- ✘ Maps {} as "object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
-   │
-   │ Array () does not match expected type "object".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
-   │ 
-
+ → Maps "stringvalue" as "string" in multitype decleration "string|int|float"
+ → Maps 3 as "int" in multitype decleration "string|int|float"
+ → Maps 9.42 as "float" in multitype decleration "string|int|float"
+ → Does not map null as "null" in multitype decleration "string|int|float"
+ → Maps "stringvalue" as "string" in multitype decleration "string|int|float|null"
+ → Maps 3 as "int" in multitype decleration "string|int|float|null"
+ → Maps 9.42 as "float" in multitype decleration "string|int|float|null"
+ → Maps null as "null" in multitype decleration "string|int|float|null"
+ → Maps "stringvalue" as "string" in multitype decleration "string|int|string[]|int[]"
+ → Maps 3 as "int" in multitype decleration "string|int|string[]|int[]"
+ → Maps ["stringvalue"] as "string[]" in multitype decleration "string|int|string[]|int[]"
+ → Maps [3] as "int[]" in multitype decleration "string|int|string[]|int[]"
+ → Does not map null as "null" in multitype decleration "string|int|string[]|int[]"
+ → Maps ["stringvalue"] as "string[]" in multitype decleration "string[]|int[]|string|int"
+ → Maps [3] as "int[]" in multitype decleration "string[]|int[]|string|int"
+ → Maps "stringvalue" as "string" in multitype decleration "string[]|int[]|string|int"
+ → Maps 3 as "int" in multitype decleration "string[]|int[]|string|int"
+ → Does not map null as "null" in multitype decleration "string[]|int[]|string|int"
+ → Maps 3 as "int" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps "stringvalue" as "string" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps 9.42 as "float" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps ["stringvalue"] as "string[]" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps [3] as "int[]" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps [{"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null}] as "JsonMapperTest_Object[]" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps {"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null} as "JsonMapperTest_Object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps {} as "object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Maps ["stringvalue",4,3.2] as "array" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
+ → Does not map null as "null" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array"
  ✘ Maps [{"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null}] as "JsonMapperTest_Object[]" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array" with strict type checking
    │
    │ Failed asserting that two arrays are equal.
@@ -356,19 +282,19 @@ Multitype
    │ +++ Actual
    │ @@ @@
    │  Array (
-   │ -    0 => JsonMapperTest_Object Object &000000000feebbe7000000003c62d439 (
-   │ +    0 => stdClass Object &000000000feeb839000000003c62d439 (
+   │ -    0 => JsonMapperTest_Object Object &0000000058db3e0f000000006111f566 (
+   │ +    0 => stdClass Object &0000000058db3ee4000000006111f566 (
    │          'datetime' => null
    │          'pValueObject' => null
    │          'pValueObjectNullable' => null
    │ 
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:162
    │ 
 
  ✘ Maps {"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null} as "JsonMapperTest_Object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array" with strict type checking
    │
-   │ stdClass Object &000000000feebbb7000000003c62d439 (
+   │ stdClass Object &0000000058db3e81000000006111f566 (
    │     'datetime' => null
    │     'pValueObject' => null
    │     'pValueObjectNullable' => null
@@ -378,19 +304,19 @@ Multitype
    │ --- Expected
    │ +++ Actual
    │ @@ @@
-   │ -JsonMapperTest_Object Object &000000000feebbe4000000003c62d439 (
-   │ +stdClass Object &000000000feebbb7000000003c62d439 (
+   │ -JsonMapperTest_Object Object &0000000058db3e0c000000006111f566 (
+   │ +stdClass Object &0000000058db3e81000000006111f566 (
    │      'datetime' => null
    │      'pValueObject' => null
    │      'pValueObjectNullable' => null
    │ 
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:162
    │ 
 
  ✘ Maps {} as "object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array" with strict type checking
    │
-   │ JsonMapperTest_Object Object &000000000feebb66000000003c62d439 (
+   │ JsonMapperTest_Object Object &0000000058db3eef000000006111f566 (
    │     'datetime' => null
    │     'pValueObject' => null
    │     'pValueObjectNullable' => null
@@ -400,8 +326,8 @@ Multitype
    │ --- Expected
    │ +++ Actual
    │ @@ @@
-   │ -stdClass Object &000000000feebbe5000000003c62d439 ()
-   │ +JsonMapperTest_Object Object &000000000feebb66000000003c62d439 (
+   │ -stdClass Object &0000000058db3e0d000000006111f566 ()
+   │ +JsonMapperTest_Object Object &0000000058db3eef000000006111f566 (
    │ +    'datetime' => null
    │ +    'pValueObject' => null
    │ +    'pValueObjectNullable' => null
@@ -410,8 +336,8 @@ Multitype
    │ +)
    │ 
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:39
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:159
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:162
    │ 
 
 FAILURES!
-Tests: 158, Assertions: 383, Failures: 9, Skipped: 1.
+Tests: 158, Assertions: 331, Failures: 3, Skipped: 29.
