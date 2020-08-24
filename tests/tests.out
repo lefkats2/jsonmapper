@@ -119,6 +119,14 @@ Multitype
  ✔ Maps last basic type in multitype strict type
  ✔ Does not map null basic type in multitype
  ✔ Does not map null basic type in multitype strict type
+ ✔ Maps first basic type nullable in multitype
+ ✔ Maps first basic type nullable in multitype strict type
+ ✔ Maps middle basic type nullable in multitype
+ ✔ Maps middle basic type nullable in multitype strict type
+ ✔ Maps last basic type nullable in multitype
+ ✔ Maps last basic type nullable in multitype strict type
+ ✔ Maps null basic type nullable in multitype
+ ✔ Maps null basic type nullable in multitype strict type
 
 namespacetest\Namespace
  ✔ Map array namespace
@@ -133,11 +141,11 @@ namespacetest\Namespace
  ✔ Map custom array object
  ✔ Setter namespaced type hint
 
-Time: 52 ms, Memory: 6.00 MB
+Time: 53 ms, Memory: 6.00 MB
 
 Summary of non-successful tests:
 
 PHP74_StrictTypes
  → Strict types mapping
 OK, but incomplete, skipped, or risky tests!
-Tests: 110, Assertions: 275, Skipped: 1.
+Tests: 118, Assertions: 295, Skipped: 1.
