@@ -112,6 +112,12 @@ Simple
 
 Multitype
  ✔ Maps first basic type in multitype
+ ✘ Maps last basic type in multitype
+   │
+   │ Failed asserting that '3.22' is of type "double".
+   │ 
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:24
+   │ 
 
 namespacetest\Namespace
  ✔ Map array namespace
@@ -126,11 +132,20 @@ namespacetest\Namespace
  ✔ Map custom array object
  ✔ Setter namespaced type hint
 
-Time: 52 ms, Memory: 6.00 MB
+Time: 53 ms, Memory: 6.00 MB
 
 Summary of non-successful tests:
 
 PHP74_StrictTypes
  → Strict types mapping
-OK, but incomplete, skipped, or risky tests!
-Tests: 103, Assertions: 261, Skipped: 1.
+
+Multitype
+ ✘ Maps last basic type in multitype
+   │
+   │ Failed asserting that '3.22' is of type "double".
+   │ 
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:24
+   │ 
+
+FAILURES!
+Tests: 104, Assertions: 264, Failures: 1, Skipped: 1.
