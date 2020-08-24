@@ -111,38 +111,42 @@ Simple
  ✔ Map simple hyphen setter
 
 Multitype
- ✔ Maps first basic type in multitype
- ✔ Maps first basic type in multitype with strict type check
- ✔ Maps middle basic type in multitype
- ✔ Maps middle basic type in multitype with strict type check
- ✔ Maps last basic type in multitype
- ✔ Maps last basic type in multitype with strict type check
- ✔ Does not map null basic type in multitype
- ✔ Does not map null basic type in multitype with strict type check
- ✔ Maps first basic type in nullable multitype
- ✔ Maps first basic type in nullable multitype with strict type check
- ✔ Maps middle basic type in nullable multitype
- ✔ Maps middle basic type in nullable multitype with strict type check
- ✔ Maps last basic type in nullable multitype
- ✔ Maps last basic type in nullable multitype with strict type check
- ✔ Maps null basic type in nullable multitype
- ✔ Maps null basic type in nullable multitype with strict type check
- ✔ Maps first basic type or array in multitype
- ✔ Maps first basic type or array in multitype with strict type check
- ✔ Maps second basic type or array in multitype
- ✔ Maps second basic type or array in multitype with strict type check
- ✔ Maps third basic type or array in multitype
- ✔ Maps third basic type or array in multitype with strict type check
- ✔ Maps fourth basic type or array in multitype
- ✔ Maps fourth basic type or array in multitype with strict type check
- ✔ Maps first basic type or array in correct order in multitype
- ✔ Maps first basic type or array in correct order in multitype with strict type check
- ✔ Maps second basic type or array in correct order in multitype
- ✔ Maps second basic type or array in correct order in multitype with strict type check
- ✔ Maps third basic type or array in correct order in multitype
- ✔ Maps third basic type or array in correct order in multitype with strict type check
- ✔ Maps fourth basic type or array in correct order in multitype
- ✔ Maps fourth basic type or array in correct order in multitype with strict type check
+ ✔ Maps "stringvalue" as "string" in multitype decleration "string|int|float"
+ ✔ Maps 3 as "int" in multitype decleration "string|int|float"
+ ✔ Maps 9.42 as "float" in multitype decleration "string|int|float"
+ ✔ Does not map null as "null" in multitype decleration "string|int|float"
+ ✔ Maps "stringvalue" as "string" in multitype decleration "string|int|float|null"
+ ✔ Maps 3 as "int" in multitype decleration "string|int|float|null"
+ ✔ Maps 9.42 as "float" in multitype decleration "string|int|float|null"
+ ✔ Maps null as "null" in multitype decleration "string|int|float|null"
+ ✔ Maps "stringvalue" as "string" in multitype decleration "string|int|string[]|int[]"
+ ✔ Maps 3 as "int" in multitype decleration "string|int|string[]|int[]"
+ ✔ Maps ["stringvalue"] as "string[]" in multitype decleration "string|int|string[]|int[]"
+ ✔ Maps [3] as "int[]" in multitype decleration "string|int|string[]|int[]"
+ ✔ Does not map null as "null" in multitype decleration "string|int|string[]|int[]"
+ ✔ Maps ["stringvalue"] as "string[]" in multitype decleration "string[]|int[]|string|int"
+ ✔ Maps [3] as "int[]" in multitype decleration "string[]|int[]|string|int"
+ ✔ Maps "stringvalue" as "string" in multitype decleration "string[]|int[]|string|int"
+ ✔ Maps 3 as "int" in multitype decleration "string[]|int[]|string|int"
+ ✔ Does not map null as "null" in multitype decleration "string[]|int[]|string|int"
+ ✔ Maps "stringvalue" as "string" in multitype decleration "string|int|float" with strict type checking
+ ✔ Maps 3 as "int" in multitype decleration "string|int|float" with strict type checking
+ ✔ Maps 9.42 as "float" in multitype decleration "string|int|float" with strict type checking
+ ✔ Does not map null as "null" in multitype decleration "string|int|float" with strict type checking
+ ✔ Maps "stringvalue" as "string" in multitype decleration "string|int|float|null" with strict type checking
+ ✔ Maps 3 as "int" in multitype decleration "string|int|float|null" with strict type checking
+ ✔ Maps 9.42 as "float" in multitype decleration "string|int|float|null" with strict type checking
+ ✔ Maps null as "null" in multitype decleration "string|int|float|null" with strict type checking
+ ✔ Maps "stringvalue" as "string" in multitype decleration "string|int|string[]|int[]" with strict type checking
+ ✔ Maps 3 as "int" in multitype decleration "string|int|string[]|int[]" with strict type checking
+ ✔ Maps ["stringvalue"] as "string[]" in multitype decleration "string|int|string[]|int[]" with strict type checking
+ ✔ Maps [3] as "int[]" in multitype decleration "string|int|string[]|int[]" with strict type checking
+ ✔ Does not map null as "null" in multitype decleration "string|int|string[]|int[]" with strict type checking
+ ✔ Maps ["stringvalue"] as "string[]" in multitype decleration "string[]|int[]|string|int" with strict type checking
+ ✔ Maps [3] as "int[]" in multitype decleration "string[]|int[]|string|int" with strict type checking
+ ✔ Maps "stringvalue" as "string" in multitype decleration "string[]|int[]|string|int" with strict type checking
+ ✔ Maps 3 as "int" in multitype decleration "string[]|int[]|string|int" with strict type checking
+ ✔ Does not map null as "null" in multitype decleration "string[]|int[]|string|int" with strict type checking
 
 namespacetest\Namespace
  ✔ Map array namespace
@@ -164,4 +168,4 @@ Summary of non-successful tests:
 PHP74_StrictTypes
  → Strict types mapping
 OK, but incomplete, skipped, or risky tests!
-Tests: 134, Assertions: 335, Skipped: 1.
+Tests: 138, Assertions: 339, Skipped: 1.
