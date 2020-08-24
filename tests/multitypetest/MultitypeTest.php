@@ -69,6 +69,8 @@ class MultitypeTest extends \PHPUnit\Framework\TestCase
             [$d, $o, 'basictypesandarrays', 'null', false, true,'string|int|string[]|int[]'],
             [$d, $o, 'basictypesandarraysincorrectorder', 'string[]|int[]|string|int', false, false,null],
             [$d, $o, 'basictypesandarraysincorrectorder', 'null', false, true,'string[]|int[]|string|int'],
+            [$d, $o, 'anytypesandarrays', 'int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array', false, false, null],
+            [$d, $o, 'anytypesandarrays', 'null', false, true, 'int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array'],
             [$d, $o, 'basictypes', 'string|int|float', true, false, null],
             [$d, $o, 'basictypes', 'null', true, true, 'string|int|float'],
             [$d, $o, 'basictypesnullable', 'string|int|float|null', true, false,null],
@@ -76,6 +78,8 @@ class MultitypeTest extends \PHPUnit\Framework\TestCase
             [$d, $o, 'basictypesandarrays', 'null', true, true,'string|int|string[]|int[]'],
             [$d, $o, 'basictypesandarraysincorrectorder', 'string[]|int[]|string|int', true, false,null],
             [$d, $o, 'basictypesandarraysincorrectorder', 'null', true, true,'string[]|int[]|string|int'],
+            [$d, $o, 'anytypesandarrays', 'int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array', true, false, null],
+            [$d, $o, 'anytypesandarrays', 'null', true, true, 'int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array'],
         ];
     }
 
@@ -100,6 +104,10 @@ class MultitypeTest extends \PHPUnit\Framework\TestCase
             case 'float':
             case 'double':
                 return 9.42;
+            case 'object':
+                return new \StdClass();
+            case 'array':
+                return ['stringvalue',4,3.2];
         }
         return new $type();
     }

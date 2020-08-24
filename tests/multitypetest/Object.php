@@ -21,4 +21,9 @@ class MultitypeTest_Object
      * @var string[]|int[]|string|int
      */
     public $basictypesandarraysincorrectorder;
+
+    /**
+     * @var int|string|float|string[]|int[]|\JsonMapperTest_Object[]|\JsonMapperTest_Object|object|array
+     */
+    public $anytypesandarrays;
 }
