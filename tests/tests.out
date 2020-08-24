@@ -133,19 +133,17 @@ Multitype
  ✔ Maps second basic types and arrays nullable in multitype strict type
  ✘ Maps third basic types and arrays nullable in multitype
    │
-   │ Array to string conversion
+   │ 1 does not match expected type "array".
    │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/src/JsonMapper.php:267
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:14
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:23
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:163
    │ 
  ✔ Maps third basic types and arrays nullable in multitype strict type
  ✘ Maps fourth basic types and arrays nullable in multitype
    │
-   │ Array to string conversion
+   │ 1 does not match expected type "array".
    │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/src/JsonMapper.php:267
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:14
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:23
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:174
    │ 
  ✔ Maps fourth basic types and arrays nullable in multitype strict type
@@ -173,21 +171,19 @@ PHP74_StrictTypes
 Multitype
  ✘ Maps third basic types and arrays nullable in multitype
    │
-   │ Array to string conversion
+   │ 1 does not match expected type "array".
    │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/src/JsonMapper.php:267
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:14
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:23
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:163
    │ 
 
  ✘ Maps fourth basic types and arrays nullable in multitype
    │
-   │ Array to string conversion
+   │ 1 does not match expected type "array".
    │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/src/JsonMapper.php:267
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:14
+   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:23
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:174
    │ 
 
-ERRORS!
-Tests: 126, Assertions: 311, Errors: 2, Skipped: 1.
+FAILURES!
+Tests: 126, Assertions: 315, Failures: 2, Skipped: 1.

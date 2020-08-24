@@ -172,7 +172,8 @@ class JsonMapper
         $rc = new ReflectionClass($object);
         $strNs = $rc->getNamespaceName();
         $providedProperties = array();
-        foreach ($json as $key => $jvalue) {
+        foreach ($json as $key => $jvalue_copy) {
+            $jvalue = $jvalue_copy;
             $key = $this->getSafeName($key);
             $providedProperties[$key] = true;
 
@@ -261,6 +262,12 @@ class JsonMapper
                             throw new JsonMapper_Exception(
                                 'JSON property "' . $key . '" in class "'
                                 . $strClassName . '" is an object and'
+                                . ' cannot be converted to a string'
+                            );
+                        } elseif ($type === 'string' && is_array($jvalue)) {
+                            throw new JsonMapper_Exception(
+                                'JSON property "' . $key . '" in class "'
+                                . $strClassName . '" is an array and'
                                 . ' cannot be converted to a string'
                             );
                         }
