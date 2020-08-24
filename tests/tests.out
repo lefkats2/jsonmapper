@@ -112,49 +112,49 @@ Simple
 
 Multitype
  ✔ Maps first basic type in multitype
- ✔ Maps first basic type in multitype strict type
+ ✔ Maps first basic type in multitype with strict type check
  ✔ Maps middle basic type in multitype
- ✔ Maps middle basic type in multitype strict type
+ ✔ Maps middle basic type in multitype with strict type check
  ✔ Maps last basic type in multitype
- ✔ Maps last basic type in multitype strict type
+ ✔ Maps last basic type in multitype with strict type check
  ✔ Does not map null basic type in multitype
- ✔ Does not map null basic type in multitype strict type
- ✔ Maps first basic type nullable in multitype
- ✔ Maps first basic type nullable in multitype strict type
- ✔ Maps middle basic type nullable in multitype
- ✔ Maps middle basic type nullable in multitype strict type
- ✔ Maps last basic type nullable in multitype
- ✔ Maps last basic type nullable in multitype strict type
- ✔ Maps null basic type nullable in multitype
- ✔ Maps null basic type nullable in multitype strict type
- ✔ Maps first basic types and arrays nullable in multitype
- ✔ Maps first basic types and arrays nullable in multitype strict type
- ✔ Maps second basic types and arrays nullable in multitype
- ✔ Maps second basic types and arrays nullable in multitype strict type
- ✘ Maps third basic types and arrays nullable in multitype
+ ✔ Does not map null basic type in multitype with strict type check
+ ✔ Maps first basic type in nullable multitype
+ ✔ Maps first basic type in nullable multitype with strict type check
+ ✔ Maps middle basic type in nullable multitype
+ ✔ Maps middle basic type in nullable multitype with strict type check
+ ✔ Maps last basic type in nullable multitype
+ ✔ Maps last basic type in nullable multitype with strict type check
+ ✔ Maps null basic type in nullable multitype
+ ✔ Maps null basic type in nullable multitype with strict type check
+ ✔ Maps first basic type or array in multitype
+ ✔ Maps first basic type or array in multitype with strict type check
+ ✔ Maps second basic type or array in multitype
+ ✔ Maps second basic type or array in multitype with strict type check
+ ✘ Maps third basic type or array in multitype
    │
    │ 1 does not match expected type "array".
    │ 
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:23
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:163
    │ 
- ✔ Maps third basic types and arrays nullable in multitype strict type
- ✘ Maps fourth basic types and arrays nullable in multitype
+ ✔ Maps third basic type or array in multitype with strict type check
+ ✘ Maps fourth basic type or array in multitype
    │
    │ 1 does not match expected type "array".
    │ 
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:23
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:174
    │ 
- ✔ Maps fourth basic types and arrays nullable in multitype strict type
- ✔ Maps first basic types and arrays in correct order nullable in multitype
- ✔ Maps first basic types and arrays in correct order nullable in multitype strict type
- ✔ Maps second basic types and arrays in correct order nullable in multitype
- ✔ Maps second basic types and arrays in correct order nullable in multitype strict type
- ✔ Maps third basic types and arrays in correct order nullable in multitype
- ✔ Maps third basic types and arrays in correct order nullable in multitype strict type
- ✔ Maps fourth basic types and arrays in correct order nullable in multitype
- ✔ Maps fourth basic types and arrays in correct order nullable in multitype strict type
+ ✔ Maps fourth basic type or array in multitype with strict type check
+ ✔ Maps first basic type or array in correct order in multitype
+ ✔ Maps first basic type or array in correct order in multitype with strict type check
+ ✔ Maps second basic type or array in correct order in multitype
+ ✔ Maps second basic type or array in correct order in multitype with strict type check
+ ✔ Maps third basic type or array in correct order in multitype
+ ✔ Maps third basic type or array in correct order in multitype with strict type check
+ ✔ Maps fourth basic type or array in correct order in multitype
+ ✔ Maps fourth basic type or array in correct order in multitype with strict type check
 
 namespacetest\Namespace
  ✔ Map array namespace
@@ -177,7 +177,7 @@ PHP74_StrictTypes
  → Strict types mapping
 
 Multitype
- ✘ Maps third basic types and arrays nullable in multitype
+ ✘ Maps third basic type or array in multitype
    │
    │ 1 does not match expected type "array".
    │ 
@@ -185,7 +185,7 @@ Multitype
    │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:163
    │ 
 
- ✘ Maps fourth basic types and arrays nullable in multitype
+ ✘ Maps fourth basic type or array in multitype
    │
    │ 1 does not match expected type "array".
    │ 
