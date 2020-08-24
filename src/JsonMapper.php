@@ -22,6 +22,13 @@
  */
 class JsonMapper
 {
+    const SCALAR_TYPE_NAMES = ['boolean', 'integer', 'double', 'string', 'array', 'object', 'resource', 'resource (closed)', 'NULL'];
+    const SCALAR_TYPE_NAMES_ALIASES = [
+        'bool' => 'boolean',
+        'int' => 'integer',
+        'float' => 'double',
+        'null' => 'NULL',
+    ];
     /**
      * PSR-3 compatible logger object
      *
@@ -65,6 +72,15 @@ class JsonMapper
      * @var boolean
      */
     public $bStrictObjectTypeChecking = false;
+
+
+    /**
+     * Throw an exception when a JSON contains a value of type which isn't strictly included in the type hints
+     * or annotations. eg. don't convert int json value into a string and the opposite
+     *
+     * @var boolean
+     */
+    public $bStrictTypeChecking = false;
 
     /**
      * Throw an exception, if null value is found
@@ -228,6 +244,8 @@ class JsonMapper
                     );
                 }
                 try {
+                    $this->validateTypeConversion($type, $jvalue, $key, $strClassName);
+
                     $type = $this->getFullNamespace($type, $strNs);
                     $type = $this->getMappedType($type, $jvalue);
 
@@ -875,6 +893,64 @@ class JsonMapper
 
         return [$type];
     }
+
+    /**
+     * @throws JsonMapper_Exception
+     */
+    protected function validateTypeConversion(string $annotated_type = null, $json_value, string $key, string $strClassName)
+    {
+        if ($this->bStrictTypeChecking) {
+            if (is_null($annotated_type)) {
+                $annotated_type='mixed';
+            }
+            $type_names = $this->normalizeToSimpleTypes([$annotated_type]);
+            $json_type_name = $this->getTypeFromJsonValue($json_value);
+
+            if (!in_array($json_type_name, $type_names, true)) {
+                throw new JsonMapper_Exception(
+                    'JSON property "' . $key . '" of type "' . $json_type_name . '" in class "'
+                        . $strClassName . ' should not be converted to a value of type '.$annotated_type
+                );
+            }
+        }
+    }
+
+    /**
+     * Normalizes an array of type name annotations to contain only internal types like the ones returned from
+     * gettype().
+     */
+    protected function normalizeToSimpleTypes(array $type_names): array
+    {
+        if (!$this->bStrictTypeChecking) {
+            return $type_names;
+        }
+        return array_reduce($type_names, function ($carry, $item) {
+            if (!empty(static::SCALAR_TYPE_NAMES_ALIASES[$item])) {
+                $carry[] = static::SCALAR_TYPE_NAMES_ALIASES[$item];
+            } elseif (in_array($item, static::SCALAR_TYPE_NAMES)) {
+                $carry[] = $item;
+            } elseif ($item == 'mixed') {
+                $carry = array_merge($carry, static::SCALAR_TYPE_NAMES);
+            } elseif (strpos($item, '[]')!==false) {
+                $carry[] = 'array';
+            } else {
+                $carry[] = 'object';
+            }
+
+            return $carry;
+        }, []);
+    }
+
+    /**
+     * Gets the type of a value (product of json_decode)
+     *
+     * @param mixed $value
+     */
+    protected function getTypeFromJsonValue($value): string
+    {
+        return gettype($value);
+    }
+
 
     /**
      * Log a message to the $logger object

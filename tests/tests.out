@@ -114,21 +114,9 @@ Multitype
  ✔ Maps first basic type in multitype
  ✔ Maps first basic type in multitype strict type
  ✔ Maps middle basic type in multitype
- ✘ Maps middle basic type in multitype strict type
-   │
-   │ Failed asserting that '144' is of type "integer".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:20
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:45
-   │ 
+ ✔ Maps middle basic type in multitype strict type
  ✔ Maps last basic type in multitype
- ✘ Maps last basic type in multitype strict type
-   │
-   │ Failed asserting that '3.22' is of type "double".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:20
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:57
-   │ 
+ ✔ Maps last basic type in multitype strict type
 
 namespacetest\Namespace
  ✔ Map array namespace
@@ -143,29 +131,11 @@ namespacetest\Namespace
  ✔ Map custom array object
  ✔ Setter namespaced type hint
 
-Time: 53 ms, Memory: 6.00 MB
+Time: 52 ms, Memory: 6.00 MB
 
 Summary of non-successful tests:
 
 PHP74_StrictTypes
  → Strict types mapping
-
-Multitype
- ✘ Maps middle basic type in multitype strict type
-   │
-   │ Failed asserting that '144' is of type "integer".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:20
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:45
-   │ 
-
- ✘ Maps last basic type in multitype strict type
-   │
-   │ Failed asserting that '3.22' is of type "double".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:20
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:57
-   │ 
-
-FAILURES!
-Tests: 108, Assertions: 273, Failures: 2, Skipped: 1.
+OK, but incomplete, skipped, or risky tests!
+Tests: 108, Assertions: 273, Skipped: 1.
