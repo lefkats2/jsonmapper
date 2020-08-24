@@ -131,21 +131,9 @@ Multitype
  ✔ Maps first basic type or array in multitype with strict type check
  ✔ Maps second basic type or array in multitype
  ✔ Maps second basic type or array in multitype with strict type check
- ✘ Maps third basic type or array in multitype
-   │
-   │ 1 does not match expected type "array".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:23
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:163
-   │ 
+ ✔ Maps third basic type or array in multitype
  ✔ Maps third basic type or array in multitype with strict type check
- ✘ Maps fourth basic type or array in multitype
-   │
-   │ 1 does not match expected type "array".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:23
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:174
-   │ 
+ ✔ Maps fourth basic type or array in multitype
  ✔ Maps fourth basic type or array in multitype with strict type check
  ✔ Maps first basic type or array in correct order in multitype
  ✔ Maps first basic type or array in correct order in multitype with strict type check
@@ -175,23 +163,5 @@ Summary of non-successful tests:
 
 PHP74_StrictTypes
  → Strict types mapping
-
-Multitype
- ✘ Maps third basic type or array in multitype
-   │
-   │ 1 does not match expected type "array".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:23
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:163
-   │ 
-
- ✘ Maps fourth basic type or array in multitype
-   │
-   │ 1 does not match expected type "array".
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:23
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:174
-   │ 
-
-FAILURES!
-Tests: 134, Assertions: 335, Failures: 2, Skipped: 1.
+OK, but incomplete, skipped, or risky tests!
+Tests: 134, Assertions: 335, Skipped: 1.

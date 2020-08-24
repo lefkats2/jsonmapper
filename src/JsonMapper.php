@@ -29,6 +29,22 @@ class JsonMapper
         'float' => 'double',
         'null' => 'NULL',
     ];
+    const TYPERX_PRIORITIES_DEFAULTS = [
+        /// by complexity
+        ['/^((.*\\[\\])|array)$/',-100], // move arrays to the front
+        // (leave unknown (class names) second)
+        ['/^(bool(ean)?|int(eger)?|double|float|string|mixed)(\\[\\])?$/',100], // basic types 3rd
+
+        /// by basic type
+        // (leave unknown (class names) first
+        ['/^object(\\[\\])?$/',1], // move objects to the front
+        ['/^(string)(\\[\\])?$/',2],
+        ['/^(double|float)(\\[\\])?$/',3],
+        ['/^(int(eger)?)(\\[\\])?$/',4],
+        ['/^(bool(ean)?)(\\[\\])?$/',5],
+        ['/^mixed(\\[\\])?$/',6], // mixed last
+
+    ];
     /**
      * PSR-3 compatible logger object
      *
@@ -81,6 +97,17 @@ class JsonMapper
      * @var boolean
      */
     public $bStrictTypeChecking = false;
+
+    /**
+     * @var boolean Specifies whether mapper should try the types of a multitype decleration in the exact declared order.
+     *
+     * Setting this to true will make `$this->prioritizeTypes()` do nothing, providing more control,
+     * however for example, note that order is important, especially when `bStrictTypeChecking` is false, for example
+     * json value '["a","b","c"]' against multitype decleration 'int|string[]' will result into mapping the json value
+     * as an integer '1' as it is settable when `bStrictTypeChecking` is false.
+     *
+     */
+    public $bStrictMultitypeOrdering = false;
 
     /**
      * Throw an exception, if null value is found
@@ -893,9 +920,9 @@ class JsonMapper
             /* @var string */
             $type;
 
-            return array_filter(explode('|', $type), function ($value) {
+            return $this->prioritizeTypes(array_filter(explode('|', $type), function ($value) {
                 return strcasecmp('null', $value)!==0;
-            });
+            }));
         }
 
         return [$type];
@@ -928,24 +955,76 @@ class JsonMapper
      */
     protected function normalizeToSimpleTypes(array $type_names): array
     {
-        if (!$this->bStrictTypeChecking) {
+        if ($this->bStrictTypeChecking) {
+            return $this->prioritizeTypes(array_reduce($type_names, function ($carry, $item) {
+                if (!empty(static::SCALAR_TYPE_NAMES_ALIASES[$item])) {
+                    $carry[] = static::SCALAR_TYPE_NAMES_ALIASES[$item];
+                } elseif (in_array($item, static::SCALAR_TYPE_NAMES)) {
+                    $carry[] = $item;
+                } elseif ($item == 'mixed') {
+                    $carry = array_merge($carry, static::SCALAR_TYPE_NAMES);
+                } elseif (strpos($item, '[]')!==false) {
+                    $carry[] = 'array';
+                } else {
+                    $carry[] = 'object';
+                }
+
+                return $carry;
+            }, []));
+            $type_names=$this->prioritizeTypes($type_names);
+        }
+        return $type_names;
+    }
+
+    /**
+     * Prioritizes types by sorting them using comparator returned from $this->makeTypeNameComparator().
+     * @return array
+     */
+    protected function prioritizeTypes(array $type_names)
+    {
+        if ($this->bStrictMultitypeOrdering || count($type_names)<=1) {
             return $type_names;
         }
-        return array_reduce($type_names, function ($carry, $item) {
-            if (!empty(static::SCALAR_TYPE_NAMES_ALIASES[$item])) {
-                $carry[] = static::SCALAR_TYPE_NAMES_ALIASES[$item];
-            } elseif (in_array($item, static::SCALAR_TYPE_NAMES)) {
-                $carry[] = $item;
-            } elseif ($item == 'mixed') {
-                $carry = array_merge($carry, static::SCALAR_TYPE_NAMES);
-            } elseif (strpos($item, '[]')!==false) {
-                $carry[] = 'array';
-            } else {
-                $carry[] = 'object';
-            }
+        usort($type_names, $this->makeTypeNameComparator());
+        return $type_names;
+    }
 
-            return $carry;
-        }, []);
+    /**
+     * Returns a comparator function to use against type names.
+     *
+     * By default a simple comparator is returned which compares first according to a cost-function which scores the
+     * typenames based on the matches and scores declared at self::TYPERX_PRIORITIES_DEFAULTS and then if equal with
+     * strcasecmp()
+     *
+     * @return Closure
+     */
+    protected function makeTypeNameComparator()
+    {
+        $costf = function ($type_name) {
+            static $cost_cache = [];
+            if (isset($cost_cache[$type_name])) {
+                return $cost_cache[$type_name];
+            }
+            $total = 0;
+            foreach (static::TYPERX_PRIORITIES_DEFAULTS as $priority_entry) {
+                $rx = $priority_entry[0];
+                if (preg_match($rx, $type_name)) {
+                    $total+=$priority_entry[1]??0;
+                }
+            }
+            $cost_cache[$type_name]=$total;
+            return $cost_cache[$type_name] = $total;
+        };
+        return function ($a, $b) use ($costf) {
+            $score_a = $costf($a);
+            $score_b = $costf($b);
+            if ($score_a==$score_b) {
+                return strcasecmp($a, $b);
+            } elseif ($score_a < $score_b) {
+                return -1;
+            }
+            return 1;
+        };
     }
 
     /**
