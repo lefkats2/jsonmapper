@@ -111,14 +111,7 @@ Simple
  ✔ Map simple hyphen setter
 
 Multitype
- ✘ Maps first basic type in multitype
-   │
-   │ Error: Class 'string|int|float' not found
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/src/JsonMapper.php:661
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/src/JsonMapper.php:292
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:11
-   │ 
+ ✔ Maps first basic type in multitype
 
 namespacetest\Namespace
  ✔ Map array namespace
@@ -133,22 +126,11 @@ namespacetest\Namespace
  ✔ Map custom array object
  ✔ Setter namespaced type hint
 
-Time: 51 ms, Memory: 6.00 MB
+Time: 52 ms, Memory: 6.00 MB
 
 Summary of non-successful tests:
 
 PHP74_StrictTypes
  → Strict types mapping
-
-Multitype
- ✘ Maps first basic type in multitype
-   │
-   │ Error: Class 'string|int|float' not found
-   │ 
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/src/JsonMapper.php:661
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/src/JsonMapper.php:292
-   │ /box/Develop/BetAdvanced/git/clones/jsonmapper/tests/multitypetest/MultitypeTest.php:11
-   │ 
-
-ERRORS!
-Tests: 103, Assertions: 258, Errors: 1, Skipped: 1.
+OK, but incomplete, skipped, or risky tests!
+Tests: 103, Assertions: 261, Skipped: 1.
