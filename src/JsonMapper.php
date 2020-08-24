@@ -31,20 +31,20 @@ class JsonMapper
     ];
     const TYPERX_PRIORITIES_DEFAULTS = [
         /// by complexity
-        ['/^((.*\\[\\])|array)$/',-100], // move arrays to the front
-        // (leave unknown (class names) second)
-        ['/^(bool(ean)?|int(eger)?|double|float|string|mixed)(\\[\\])?$/',100], // basic types 3rd
+        ['/^((.*\\[\\])|array)$/',-200], // move arrays to the front
+        ['/^(bool(ean)?|int(eger)?|double|float|string|mixed)(\\[\\])?$/',-100], // basic types 2nd
+        // (leave unknown (class names) last)
 
         /// by basic type
         // (leave unknown (class names) first
-        ['/^object(\\[\\])?$/',1], // move objects to the front
         ['/^(string)(\\[\\])?$/',2],
         ['/^(double|float)(\\[\\])?$/',3],
         ['/^(int(eger)?)(\\[\\])?$/',4],
         ['/^(bool(ean)?)(\\[\\])?$/',5],
-        ['/^mixed(\\[\\])?$/',6], // mixed last
-
+        ['/^object(\\[\\])?$/',6], // move generic objects to the back
+        ['/^mixed(\\[\\])?$/',7], // mixed last
     ];
+
     /**
      * PSR-3 compatible logger object
      *
