@@ -914,6 +914,14 @@ class JsonMapper
     }
 
     /**
+     * from: https://stackoverflow.com/a/4254008
+     */
+    protected function isDictionary(array $value): bool
+    {
+        return count(array_filter(array_keys($value), 'is_string')) > 0;
+    }
+
+    /**
      * @throws JsonMapper_Exception
      */
     protected function validateTypeConversion(string $annotated_type = null, $json_value, string $key, string $strClassName)
@@ -926,6 +934,10 @@ class JsonMapper
             $json_type_name = $this->getTypeFromJsonValue($json_value);
 
             if (!in_array($json_type_name, $type_names, true)) {
+                if ($json_type_name == 'array' && $this->isDictionary($json_value) && in_array('object', $type_names)) {
+                    // associative array to object
+                    return;
+                }
                 throw new JsonMapper_Exception(
                     'JSON property "' . $key . '" of type "' . $json_type_name . '" in class "'
                         . $strClassName . ' should not be converted to a value of type '.$annotated_type

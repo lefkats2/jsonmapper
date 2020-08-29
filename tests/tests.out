@@ -169,8 +169,8 @@ Multitype
    │ +++ Actual
    │ @@ @@
    │  Array (
-   │ -    0 => JsonMapperTest_Object Object &0000000058db3e0f000000006111f566 (
-   │ +    0 => stdClass Object &0000000058db3ee4000000006111f566 (
+   │ -    0 => JsonMapperTest_Object Object &000000005fba64bd000000003125f815 (
+   │ +    0 => stdClass Object &000000005fba6456000000003125f815 (
    │          'datetime' => null
    │          'pValueObject' => null
    │          'pValueObjectNullable' => null
@@ -180,7 +180,7 @@ Multitype
    │ 
  ✘ Maps {"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null} as "JsonMapperTest_Object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array" with strict type checking
    │
-   │ stdClass Object &0000000058db3e81000000006111f566 (
+   │ stdClass Object &000000005fba6433000000003125f815 (
    │     'datetime' => null
    │     'pValueObject' => null
    │     'pValueObjectNullable' => null
@@ -190,8 +190,8 @@ Multitype
    │ --- Expected
    │ +++ Actual
    │ @@ @@
-   │ -JsonMapperTest_Object Object &0000000058db3e0c000000006111f566 (
-   │ +stdClass Object &0000000058db3e81000000006111f566 (
+   │ -JsonMapperTest_Object Object &000000005fba64be000000003125f815 (
+   │ +stdClass Object &000000005fba6433000000003125f815 (
    │      'datetime' => null
    │      'pValueObject' => null
    │      'pValueObjectNullable' => null
@@ -201,7 +201,7 @@ Multitype
    │ 
  ✘ Maps {} as "object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array" with strict type checking
    │
-   │ JsonMapperTest_Object Object &0000000058db3eef000000006111f566 (
+   │ JsonMapperTest_Object Object &000000005fba645d000000003125f815 (
    │     'datetime' => null
    │     'pValueObject' => null
    │     'pValueObjectNullable' => null
@@ -211,8 +211,8 @@ Multitype
    │ --- Expected
    │ +++ Actual
    │ @@ @@
-   │ -stdClass Object &0000000058db3e0d000000006111f566 ()
-   │ +JsonMapperTest_Object Object &0000000058db3eef000000006111f566 (
+   │ -stdClass Object &000000005fba64bf000000003125f815 ()
+   │ +JsonMapperTest_Object Object &000000005fba645d000000003125f815 (
    │ +    'datetime' => null
    │ +    'pValueObject' => null
    │ +    'pValueObjectNullable' => null
@@ -239,7 +239,7 @@ namespacetest\Namespace
  ✔ Map custom array object
  ✔ Setter namespaced type hint
 
-Time: 58 ms, Memory: 6.00 MB
+Time: 286 ms, Memory: 8.00 MB
 
 Summary of non-successful tests:
 
@@ -282,8 +282,8 @@ Multitype
    │ +++ Actual
    │ @@ @@
    │  Array (
-   │ -    0 => JsonMapperTest_Object Object &0000000058db3e0f000000006111f566 (
-   │ +    0 => stdClass Object &0000000058db3ee4000000006111f566 (
+   │ -    0 => JsonMapperTest_Object Object &000000005fba64bd000000003125f815 (
+   │ +    0 => stdClass Object &000000005fba6456000000003125f815 (
    │          'datetime' => null
    │          'pValueObject' => null
    │          'pValueObjectNullable' => null
@@ -294,7 +294,7 @@ Multitype
 
  ✘ Maps {"datetime":null,"pValueObject":null,"pValueObjectNullable":null,"pPlainObject":null,"pString":null} as "JsonMapperTest_Object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array" with strict type checking
    │
-   │ stdClass Object &0000000058db3e81000000006111f566 (
+   │ stdClass Object &000000005fba6433000000003125f815 (
    │     'datetime' => null
    │     'pValueObject' => null
    │     'pValueObjectNullable' => null
@@ -304,8 +304,8 @@ Multitype
    │ --- Expected
    │ +++ Actual
    │ @@ @@
-   │ -JsonMapperTest_Object Object &0000000058db3e0c000000006111f566 (
-   │ +stdClass Object &0000000058db3e81000000006111f566 (
+   │ -JsonMapperTest_Object Object &000000005fba64be000000003125f815 (
+   │ +stdClass Object &000000005fba6433000000003125f815 (
    │      'datetime' => null
    │      'pValueObject' => null
    │      'pValueObjectNullable' => null
@@ -316,7 +316,7 @@ Multitype
 
  ✘ Maps {} as "object" in multitype decleration "int|string|float|string[]|int[]|JsonMapperTest_Object[]|JsonMapperTest_Object|object|array" with strict type checking
    │
-   │ JsonMapperTest_Object Object &0000000058db3eef000000006111f566 (
+   │ JsonMapperTest_Object Object &000000005fba645d000000003125f815 (
    │     'datetime' => null
    │     'pValueObject' => null
    │     'pValueObjectNullable' => null
@@ -326,8 +326,8 @@ Multitype
    │ --- Expected
    │ +++ Actual
    │ @@ @@
-   │ -stdClass Object &0000000058db3e0d000000006111f566 ()
-   │ +JsonMapperTest_Object Object &0000000058db3eef000000006111f566 (
+   │ -stdClass Object &000000005fba64bf000000003125f815 ()
+   │ +JsonMapperTest_Object Object &000000005fba645d000000003125f815 (
    │ +    'datetime' => null
    │ +    'pValueObject' => null
    │ +    'pValueObjectNullable' => null
